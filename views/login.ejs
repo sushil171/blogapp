@@ -1,0 +1,43 @@
+<% include partial/header  %>
+
+<!-- 
+<h1>Login page</h1>
+<form action="/login" method="post">
+  <div class="">
+      <input required type="text" name="username" placeholder="username"> 
+  </div>
+  
+  <input required type="password" name="password" placeholder="password">
+  <button>Login</button>
+</form> -->
+
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 class="active"> Log In </h2>
+  
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="https://image.freepik.com/free-vector/modern-welcome-sign-post-with-neon-light-style_23-2147913912.jpg"
+        id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form action="/login" method="POST">
+      <input  type="text" id="email" class="fadeIn second" name="username" placeholder="Username">
+      <input  type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="/reset">Forgot Password?</a>
+      <a class="underlineHover" href="/register">Sign Up </h2>
+    </div>
+
+  </div>
+</div>
+
+<% include partial/footer  %>

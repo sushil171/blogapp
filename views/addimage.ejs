@@ -1,0 +1,57 @@
+<% include partial/header %>
+
+<!-- <div class="container">
+ <div class="row">
+   <h1 style="text-align:center">Create a New Campgorund</h1>
+   <div style="width:30%;margin:25px auto;">
+     <form   action="/campground" method="post">
+       <div class="form-group">
+         <input required class="form-control" type="text" name="name" placeholder="name">
+       </div>
+       <div class="form-group">
+         <input required class="form-control" type="text" name="image" placeholder="image url">
+        </div>
+        <div class="form-group">
+          <input required class="form-control" type="text" name="description" placeholder="description">
+        </div>
+
+       <div class="container">
+           <button class="btn btn-large btn-default" >submit</button>
+       </div>
+   </form>
+   </div>
+ </div>
+</div> -->
+
+
+<div class="container">
+<div class="row">
+  <h1 style="text-align: center"><strong>Create a New Campground</strong></h1>
+  <div style="width: 30%; margin: 25px auto;">
+    <form action="/campground" method="POST">
+      <div class="form-group">
+        <h3 style="text-align: center"> <b>Name</b></h3>
+        <input class="form-control" type="text" name="name" id="name" placeholder="Name of Campgorund">
+      </div>
+      <div class="form-group">
+      <h3 style="text-align: center"> <b>Image URL </b></h3>
+        <input class="form-control" type="text" name="image" id="image" placeholder="Image URL">
+
+      </div>
+
+      <div class="form-group">
+        <h3 style="text-align: center"> <b>Description</b></h3>
+        <input class="form-control" type="text" name="description" id="description"
+          placeholder="Description of Campground">
+      </div>
+      <div class="form-group" style="width:50%; margin :5px auto ;">
+        <button class="btn btn-sm btn-primary btn-block">Submit!</button>
+      </div>
+    </form>
+    <a href="/campground">Go Back</a>
+  </div>
+</div>
+
+</div>
+
+<% include partial/footer  %>

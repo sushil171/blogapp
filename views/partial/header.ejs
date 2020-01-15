@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>YelpCamp</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href=" /stylesheet/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+  <nav class =" navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+        aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" href="/">YelpCamp</a>
+      </div>
+
+      <div id="navbar" class="collaspe navbar-collaspe">
+        <ul class="nav navbar-nav">
+          <li class="<%= typeof page !== 'undefined' && page === 'campgrounds' ? 'active' : '' %>"><a
+              href="/campground">Home</a></li>
+          <li class="<%= typeof page !== 'undefined' && page === 'campgrounds' ? 'active' : '' %>"><a href="/campground/new">New Campgorund</a>
+          </li>
+          <!-- <li class="<%= typeof page !== 'undefined' && page === 'campgrounds' ? 'active' : '' %>"><a href="/upload"></a>
+          </li> -->
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if(!currentuser){ %>
+          <li class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>"><a href="/login">Login</a></li>
+          <li class="<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>"><a href="/register">Sign Up</a>
+          </li>
+          <% } else { %>
+          <li><a href="#">Signed In As <%= currentuser.username %></a></li>
+          <li><a href="/logout">Logout</a></li>
+          <% } %>
+        </ul>
+        <!-- </ul> -->
+
+        <!-- <ul class="nav navbar-nav navbar-right">
+          <% if(!currentuser){ %>
+          <li class=" inactive underlineHover"><a href="/register"><b>Sign Up!</b> </a></li>
+          <li class=" inactive underlineHover"><a href="/login"><b>Log In</b></a></li>
+
+          <% }else{%>
+          <li><a href="#">Signed as <%=currentuser.username %></a></li>
+          <li><a href="/logout">Logout</a></li>
+          <% }%>
+
+        </ul> -->
+
+      </div>
+    </div>
+
+  </nav>

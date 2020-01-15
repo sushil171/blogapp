@@ -1,0 +1,43 @@
+
+<%include partial/header%>
+ <header class="jumbotron" style="text-align: center;">
+    <div class="container" style="margin:10px">
+     <h1>Welcome To Yelpcamp! </h1>
+     <p>Space r like ocean</p>
+     <p>
+     <a class="btn btn-primary btn-large" href="/campground/new">Add New Campground!</a>
+   </p>
+   </header>
+
+   <div class="container">
+      <div class="row text-center flex-wrap">
+        <% campground.forEach(function(foundcampground){%>
+        <div class="col-md-3 col-sm-9" style="border-style:solid; border-radius:10px;border-collapse: separate;">
+          <div class="thumbnail">
+            <img style="height: 100% ;width: 100%; object-fit: fill" src="<%= foundcampground.image %>">
+            <div class="caption">
+              <h1> <%=foundcampground.name %> </h1>
+            </div>
+            <p>
+              <a href="/campground/<%=foundcampground._id%>" class="btn btn-primary">More info</a>
+            </p>
+          </div>
+
+  </div>
+
+  <%})%>
+
+</div>
+</div>
+
+    
+
+
+<!-- <form  action="/image" method="post">
+ <input type="text" name="name" placeholder="name">
+ <input type="text" name="image" placeholder="image">
+ <button>submit</button>
+</form> -->
+
+</div>
+<% include partial/footer  %>

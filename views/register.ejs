@@ -1,0 +1,37 @@
+<% include partial/header  %>
+<!-- <h1>Sign Up form</h1>
+<form class="" action="/register" method="post">
+  <input required type="text" name="username" placeholder="username">
+  <input required type="password" name="password" placeholder="password">
+<button type="submit" name="button">Sign Up!</button>
+</form> -->
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 class="active"> Sign Up </h2>
+
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="https://image.shutterstock.com/image-photo/image-150nw-1375612079.jpg"
+        id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form action="/register" method="POST">
+      <input  type="text" id="username" class="fadeIn second" name="username" placeholder="Username">
+      <input  type="text" id="email" class="fadeIn third" name="email" placeholder="Email">
+      <input  type="password" id="password" class="fadeIn fourth" name="password" placeholder="password">
+      <input type="submit" class="fadeIn fourth" value="Sign Up">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <!-- <a class="underlineHover" href="#">Forgot Password?</a> -->
+      <h6>If you have already register !!</h6>
+      <a class="underlineHover" href="/login">Login</h2>
+    </div>
+
+  </div>
+</div>

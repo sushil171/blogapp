@@ -1,0 +1,107 @@
+<% include partial/header %>
+  
+<%count=0%>
+
+<!-- <div class="row"> -->
+  <div style="border-style:dotted;border-radius: 10px;text-align:center;margin: 0px;padding-left: 0px;padding-right: 0px;">
+     <div>
+      <h3><%=campground.name%></h3>
+     </div>
+     <div class="container">
+       <div class="caption-full">
+<img class="img-responsive" src="<%= campground.image %>">
+       </div>
+        
+     </div>
+  </div>
+  
+      
+    <div class="container" style="text-align: center;">
+      <div>
+        <p style="text-align: center;">$90/Night</p>
+      </div>
+      <div>
+        <p><a><%=campground.name%></a> </p>
+      </div>
+      <div>
+        <p><strong>Uploaded By: <%= campground.author.username.toUpperCase() %></strong></p>
+      </div>
+        <div>
+            <p><strong><%= campground.description.toUpperCase() %></strong></p>     
+        </div>
+      
+        <% if(currentuser && campground.author.id.equals(currentuser._id)){ %>
+          <div style="text-align: center;" >
+              <a class="btn btn-warning" href="/campground/<%= campground._id %>/edit">Edit</a>
+              <form action="/campground/<%= campground._id %>?_method=DELETE" method="POST" class="delete-form">
+                <button style="text-align: center;margin: 10px;" class="btn btn-danger">Delete</button>
+              </form>
+          </div>
+        
+        <% } %>
+    </div>
+
+
+      <div class="well text-right"> 
+    <div>
+    
+        <a class="btn btn-success" href="/campground/<%= campground._id %>/comment/new">Add New Comment</a>
+      </div>
+      <hr>
+      <% campground.comment.forEach(function(comment){ %>
+      <div class="row" >
+        <div style="text-align:left;" >
+        <ul style="list-style-type:disc;">
+            <li>
+                <strong style="border: 2px solid black;
+  border-radius: 5px;"><%= ((comment.author.username).toUpperCase()) %></strong>
+                <ul>
+                  <li>
+                      <div>
+                        <%= comment.text %>
+                        <% if(currentuser && comment.author.id.equals(currentuser._id) ){ %>
+                        <div class="pull-right">
+                      <span>
+                      
+                        <form class="delete-form" action="/campground/<%=campground._id%>/comment/<%=comment._id%>?_method=DELETE"
+                          method="POST">
+                          <button class="btn btn-xs btn-danger">DELETE</button>
+                        </form>
+                      </span>    
+                        </div>
+                        <% } %>
+                        <hr>
+                      </div>
+                  </li>
+                </ul>
+            </li>
+          </ul>
+         
+         
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+ 
+  
+<script>
+$(document).ready(function() {
+$('i.glyphicon-thumbs-up, i.glyphicon-thumbs-down').click(function(){
+var $this = $(this),
+c = $this.data('count');
+if (!c) c = 0;
+c++;
+$this.data('count',c);
+$('#'+this.id+'-bs3').html(c);
+});
+$(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+event.preventDefault();
+$(this).ekkoLightbox();
+});
+});
+
+
+</script>
+
+<% include partial/footer  %>

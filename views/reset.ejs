@@ -1,0 +1,32 @@
+<% include partial/header %>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <h2 class="active"> Reset Password </h2>
+
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img style="background-repeat: no-repeat;"
+                src="https://image.shutterstock.com/image-photo/image-150nw-1375612079.jpg" id="icon" alt="User Icon" />
+        </div>
+
+        <!-- Login Form -->
+        <form action="/reset" method="POST">
+            <input required type="text" id="email" class="fadeIn second" name="email" placeholder="Email">
+            <!-- <input required type="password" id="password" class="fadeIn third" name="password"
+                placeholder="Reset-Password"> -->
+            <input type="submit" class="fadeIn third" value="reset">
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <!-- <a class="underlineHover" href="#">Forgot Password?</a> -->
+            <h6>If you have already register !!</h6>
+            <a class="underlineHover" href="/login">Login</h2>
+        </div>
+
+    </div>
+</div>
+
+<% include partial/footer  %>
